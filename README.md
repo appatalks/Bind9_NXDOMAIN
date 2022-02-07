@@ -6,7 +6,7 @@ Goal: Maintain easy to update blacklist for NXDOMAIN routing.<p>
 <p></p>
 Step 1: Custimize Global "named.conf"<p>
 Step 2: Create a "blockeddomain.hosts"<p></p>
-Step 3: Generate a blacklist "blacklist.db" of domains that will respond with NXDOMAIN<p>
+Step 3: Generate a "blacklist.db" of domains that will respond with NXDOMAIN<p>
 Step 4: Use the DNS Server & Profit</p>
 </p>
 Bitcoin Donation: 16CowvxvLSR4BPEP9KJZiR622UU7hGEce5<p>
