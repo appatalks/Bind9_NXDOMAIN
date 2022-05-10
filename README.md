@@ -1,3 +1,13 @@
+Now Deployable as an Automatic, Deploy and Forget AMI via the Amazon Market Place:</p>
+https://aws.amazon.com/marketplace/pp/prodview-pap4alojvsuny?sr=0-2&ref_=beagle&applicationId=AWSMPContessa
+</p>
+1) Launch as a t2.micro or above in a Public Subnet for general home of office use. </p>
+2) Attach an Elastic IP for persistence. </p>
+3) Adjust Security Group whitelisting IP Ranges that are used. (https://www.google.com/search?&q=whatsmyip) </p>
+4) Point your home/office router to the Elastic Public IP </p>
+
+
+</br>
 ** This Readme assumes you know some level of server administration **
 <p></p>
 For publiclly available private recursive DNS Server<p><p></p>
