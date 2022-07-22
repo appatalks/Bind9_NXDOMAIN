@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+# set -e
 
 BIND_DATA_DIR=${DATA_DIR}/bind
 
@@ -25,7 +25,8 @@ create_pid_dir() {
 create_bind_cache_dir() {
   mkdir -p /var/cache/bind
   chmod 0775 /var/cache/bind
-  chown root:${BIND_USER} /var/cache/bind
+#  chown root:${BIND_USER} /var/cache/bind
+  chown bind:bind /var/cache/bind
 }
 
 create_alias_create_key() {

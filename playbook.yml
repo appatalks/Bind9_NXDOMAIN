@@ -1,0 +1,90 @@
+# https://github.com/AhaDNS/dns-server-setup
+# This file does (usually) not need to be modified.
+# Disclaimer:
+# -> I don't know any best practices when it comes to Ansible.
+# -> This file have been created on late nights, possibly (probably?) under the influence.
+# -> You're more than welcome to help me clean this up and improve the playbook!
+#
+- hosts: dns_resolvers
+  become: true
+  vars:
+
+  tasks:
+    - name: Install latest required packages
+      apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - bind9
+          - bind9utils
+          - dnsutils
+          - wget
+      register: install_result
+
+    - name: Enable bind9
+      systemd:
+        name: named
+        enabled: yes
+
+#    - name: install roles
+#      command: ansible-galaxy install -r "{{ playbook_dir }}/requirements.yml"
+#      delegate_to: localhost
+#      become: false
+
+    #
+    # Bind9 setup
+    #
+
+    - name: Copy custom named.conf
+      copy:
+        src: named.conf
+        dest: /etc/bind/named.conf
+        force: yes
+        mode: "0644"
+
+    - name: Copy custom blockeddomain.hosts
+      copy:
+        src: blockeddomain.hosts
+        dest: /var/cache/bind/blockeddomain.hosts
+        force: yes
+        mode: "0644"
+
+    - name: Copy custom entrypoint.sh
+      copy:
+        src: entrypoint.sh
+        dest: /sbin/entrypoint.sh
+        force: yes
+        mode: "0774"
+
+    - name: Copy custom update_blacklist.sh
+      copy:
+        src: update_blacklist.sh
+        dest: /root/update_blacklist.sh
+        force: yes
+        mode: "0774"
+
+    - name: Touch blacklist.db
+      file:
+        path: /var/cache/bind/blacklist.db
+        state: touch
+        mode: "0644"
+
+#    - name: Restart bind0
+#      systemd:
+#        state: restarted
+#        daemon_reload: yes
+#        name: named
+
+    # Disable AppArmor for Bind9
+    - name: Disable AppArmor
+      command: ln -s /etc/apparmor.d/usr.sbin.named /etc/apparmor.d/disable/
+#    - name: Reload AppArmor
+#      command: apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.named
+
+    #
+    # Execute custom scripts 
+    #
+    - name: Execute entrypoint.sh
+      command: /sbin/entrypoint.sh
+    - name: Execute update_blacklist.sh
+      command: /root/update_blacklist.sh
