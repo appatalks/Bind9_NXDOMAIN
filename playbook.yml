@@ -1,9 +1,4 @@
 # https://github.com/AhaDNS/dns-server-setup
-# This file does (usually) not need to be modified.
-# Disclaimer:
-# -> I don't know any best practices when it comes to Ansible.
-# -> This file have been created on late nights, possibly (probably?) under the influence.
-# -> You're more than welcome to help me clean this up and improve the playbook!
 #
 - hosts: dns_resolvers
   become: true
