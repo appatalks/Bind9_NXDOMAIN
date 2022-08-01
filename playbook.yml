@@ -1,4 +1,4 @@
-# https://github.com/AhaDNS/dns-server-setup
+# Borrowed and Modified from : https://github.com/AhaDNS/dns-server-setup
 #
 - hosts: dns_resolvers
   become: true
