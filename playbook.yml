@@ -14,6 +14,7 @@
           - bind9utils
           - dnsutils
           - wget
+          - net-tools
       register: install_result
 
     - name: Enable bind9
@@ -73,8 +74,8 @@
     # Disable AppArmor for Bind9
     - name: Disable AppArmor
       command: ln -s /etc/apparmor.d/usr.sbin.named /etc/apparmor.d/disable/
-#    - name: Reload AppArmor
-#      command: apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.named
+    - name: Reload AppArmor
+      command: apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.named
 
     #
     # Execute custom scripts 
