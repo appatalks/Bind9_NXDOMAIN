@@ -1,4 +1,21 @@
+<p></p>
+
+Adding Change Control History
+<p></p>
+
+08-13-2022 - Project Structing for differnt OS being added to roadmap.
+             Very much beta, need to modify a bit for your system needs.
+             Working in OS agnostic deployment automation through various methods
+             i.e. standalone, on-metal, kube & containers, VM, Android etc.
+<p></p>
+
+Do not just Deploy! Go through the configs and makes sure they will work for your setup.
+Eventually I will work in logic to be a lot more automated.
+<p></p>
+
+
 </p>
+
 Now Deployable as an Automatic, Deploy and Forget AMI via the Amazon Market Place:</p>
 https://aws.amazon.com/marketplace/pp/prodview-pap4alojvsuny?sr=0-2&ref_=beagle&applicationId=AWSMPContessa
 </p>
@@ -20,15 +37,6 @@ Step 2: Create a "blockeddomain.hosts"<p></p>
 Step 3: Generate a "blacklist.db" of domains that will respond with NXDOMAIN<p>
 Step 4: Use the DNS Server & Profit</p>
 </p>
-
-Adding Change Control History
-08-13-2022 - Project Structing for differnt OS being added to roadmap.
-             Very much beta, need to modify a bit for your system needs.
-	     Working in OS agnostic deployment automation through various methods
- 	     i.e. standalone, on-metal, kube & containers, VM, Android etc.
-
-Do not just Deploy! Go through the configs and makes sure they will work for your setup. 
-Eventually I will work in logic to be a lot more automated.
 
 <p></p>
 Bitcoin Donation: 16CowvxvLSR4BPEP9KJZiR622UU7hGEce5<p>
