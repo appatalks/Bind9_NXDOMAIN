@@ -27,6 +27,9 @@ Adding Change Control History
 	     Working in OS agnostic deployment automation through various methods
  	     i.e. standalone, on-metal, kube & containers, VM, Android etc.
 
+Do not just Deploy! Go through the configs and makes sure they will work for your setup. 
+Eventually I will work in logic to be a lot more automated.
+
 <p></p>
 Bitcoin Donation: 16CowvxvLSR4BPEP9KJZiR622UU7hGEce5<p>
 Ethereum Donation: 0xf75278bd6e2006e6ef4847c9a9293e509ab815c5<p></p>
