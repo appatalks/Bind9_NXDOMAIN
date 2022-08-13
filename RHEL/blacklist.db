@@ -1,0 +1,6 @@
+# Can be taken from many sources.
+# Here is my favorite at this time: https://github.com/notracking/hosts-blocklists/blob/master/dnscrypt-proxy/
+
+example.com CNAME .
+malwaredomain.com CNAME .
+ihate.to-many-ads.com CNAME .
