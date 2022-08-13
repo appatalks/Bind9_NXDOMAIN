@@ -58,10 +58,5 @@
 # 127.0.0.1 ansible_connection=local
 
 [dns_resolvers]
-192.168.86.64 ansible_user=lab
-
-[dns_resolvers:vars]
-# hostname=
-# timezone="Europe/Stockholm"
-# sshPort="22"
+192.168.xx.xx ansible_user=lab ansible_port=<non_22_port> 
 

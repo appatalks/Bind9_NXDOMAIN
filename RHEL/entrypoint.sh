@@ -1,17 +1,19 @@
 #!/bin/bash
 # set -e
 
-BIND_DATA_DIR=${DATA_DIR}/bind
+BIND_USER=named
+BIND_DATA_DIR=${DATA_DIR}/named
 
 create_bind_data_dir() {
   mkdir -p ${BIND_DATA_DIR}
+  mkdir -p /var/cache/bind
 
   # populate default bind configuration if it does not exist
   if [ ! -d ${BIND_DATA_DIR}/etc ]; then
-    mv /etc/bind ${BIND_DATA_DIR}/etc
+    mv /etc/named ${BIND_DATA_DIR}/etc
   fi
-  rm -rf /etc/bind
-  ln -sf ${BIND_DATA_DIR}/etc /etc/bind
+  rm -rf /etc/named
+  ln -sf ${BIND_DATA_DIR}/etc /etc/named
   chmod -R 0775 ${BIND_DATA_DIR}
   chown -R ${BIND_USER}:${BIND_USER} ${BIND_DATA_DIR}
 }
@@ -26,7 +28,7 @@ create_bind_cache_dir() {
   mkdir -p /var/cache/bind
   chmod 0775 /var/cache/bind
 #  chown root:${BIND_USER} /var/cache/bind
-  chown bind:bind /var/cache/bind
+  chown named:named /var/cache/bind
 }
 
 create_alias_create_key() {

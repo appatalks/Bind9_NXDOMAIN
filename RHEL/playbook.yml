@@ -6,15 +6,14 @@
 
   tasks:
     - name: Install latest required packages
-      apt:
+      yum:
         name: "{{ packages }}"
       vars:
         packages:
-          - bind9
-          - bind9utils
-          - dnsutils
+          - bind
+          - bind-utils
+          - curl
           - wget
-          - net-tools
       register: install_result
 
     - name: Enable bind9
@@ -30,11 +29,16 @@
     #
     # Bind9 setup
     #
+    - name: Ansible create directory and set permissions    
+      file:
+        path: /var/cache/bind
+        state: directory      
+        mode: "u=rwx,g=rwx,o=rx"    
 
     - name: Copy custom named.conf
       copy:
         src: named.conf
-        dest: /etc/bind/named.conf
+        dest: /etc/named.conf
         force: yes
         mode: "0644"
 
@@ -65,6 +69,13 @@
         state: touch
         mode: "0644"
 
+    - name: Touch named.conf.local
+      file:
+        path: /etc/named/named.conf.local
+        state: touch
+        mode: "0644"
+
+
 #    - name: Restart bind0
 #      systemd:
 #        state: restarted
@@ -72,10 +83,10 @@
 #        name: named
 
     # Disable AppArmor for Bind9
-    - name: Disable AppArmor
-      command: ln -s /etc/apparmor.d/usr.sbin.named /etc/apparmor.d/disable/
-    - name: Reload AppArmor
-      command: apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.named
+#    - name: Disable AppArmor
+#      command: ln -s /etc/apparmor.d/usr.sbin.named /etc/apparmor.d/disable/
+#    - name: Reload AppArmor
+#      command: apparmor_parser -R /etc/apparmor.d/disable/usr.sbin.named
 
     #
     # Execute custom scripts 

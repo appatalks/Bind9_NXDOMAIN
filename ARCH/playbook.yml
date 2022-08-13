@@ -6,7 +6,7 @@
 
   tasks:
     - name: Install latest required packages
-      apt:
+      pacman:
         name: "{{ packages }}"
       vars:
         packages:

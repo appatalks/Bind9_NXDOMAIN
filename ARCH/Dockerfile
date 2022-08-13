@@ -1,11 +1,10 @@
-FROM ubuntu:latest
+FROM # Arch Linux
 
 ENV BIND_USER=bind \
-    BIND_VERSION=9.16.1-0ubuntu2 \
     DATA_DIR=/data
 
-RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN pacman -Sy \
+ && ARCH_FRONTEND=noninteractive apt-get install -y \
       bind9 bind9utils dnsutils wget\
  && rm -rf /var/lib/apt/lists/*
 
