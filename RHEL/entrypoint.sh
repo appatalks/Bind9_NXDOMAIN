@@ -37,7 +37,7 @@ create_alias_create_key() {
 }
 
 create_blacklist_update() {
-  echo "0 5 * * */7 /root/update_blacklist.sh >> /root/dns_update.log 2>&1" > /etc/cron.daily/dns-update
+  echo "/root/update_blacklist.sh >> /root/dns_update.log 2>&1" > /etc/cron.daily/dns-update
   chmod 0775 /etc/cron.daily/dns-update
   chmod 0755 /root/update_blacklist.sh
 }
