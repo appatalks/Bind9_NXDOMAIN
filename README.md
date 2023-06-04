@@ -1,18 +1,15 @@
+<img src="NX-01EnterpriseMirror.png" width="250" height="250">
 <p></p>
 
-Adding Change Control History
 <p></p>
-
-Do not just Deploy! Go through the configs and makes sure they will work for your setup.
-Eventually I will work in logic to be a lot more automated.
+Do not just Deploy! </p>
+Go through the configs and makes sure they will work for your setup.
 <p></p>
-
 
 </p>
 
-
 </br>
-** This Readme assumes you know some level of server administration **
+** Best Deployed with Ansible **
 <p></p>
 For publiclly available private recursive DNS Server<p><p></p>
 Goal: Allow authorized networks access to a Recursive DNS Server quering direct from the global root servers.<p>
