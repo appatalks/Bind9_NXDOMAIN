@@ -1,5 +1,7 @@
 # Borrowed and Modified from : https://github.com/AhaDNS/dns-server-setup
 #
+# Tested on Debian 11 (Should also work on Ubuntu 22.04)
+#
 - hosts: dns_resolvers
   become: true
   vars:
@@ -64,12 +66,6 @@
         path: /var/cache/bind/blacklist.db
         state: touch
         mode: "0644"
-
-#    - name: Restart bind0
-#      systemd:
-#        state: restarted
-#        daemon_reload: yes
-#        name: named
 
     # Disable AppArmor for Bind9
     - name: Disable AppArmor
