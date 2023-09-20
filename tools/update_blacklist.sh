@@ -8,7 +8,8 @@ mkdir -p /root/bind-blacklists/"$(date +"%d-%m-%Y")"
 cd /root/bind-blacklists/"$(date +"%d-%m-%Y")"
 
 # Grab New Lists
-wget https://github.com/notracking/hosts-blocklists/raw/master/dnscrypt-proxy/dnscrypt-proxy.blacklist.txt
+# notracking was archived Aug 8, 2023.
+# wget https://github.com/notracking/hosts-blocklists/raw/master/dnscrypt-proxy/dnscrypt-proxy.blacklist.txt
 wget https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/RAW/Malware
 
 # Prep
