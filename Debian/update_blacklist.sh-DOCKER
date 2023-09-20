@@ -4,7 +4,8 @@
 #
 mkdir -p /root/bind-blacklists/"$(date +"%d-%m-%Y")"
 cd /root/bind-blacklists/"$(date +"%d-%m-%Y")"
-wget https://github.com/notracking/hosts-blocklists/raw/master/dnscrypt-proxy/dnscrypt-proxy.blacklist.txt
+# wget https://github.com/notracking/hosts-blocklists/raw/master/dnscrypt-proxy/dnscrypt-proxy.blacklist.txt
+wget https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/RAW/Malware
 cp /var/cache/bind/blacklist.db .
 cat blacklist.db | awk '{print $1}'| sort > blacklist.current
 grep -v "#" dnscrypt-proxy.blacklist.txt >> blacklist.current
