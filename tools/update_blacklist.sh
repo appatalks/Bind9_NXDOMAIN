@@ -17,7 +17,7 @@ cp /var/cache/bind/blacklist.db .
 cat blacklist.db | awk '{print $1}'| sort > blacklist.current
 
 # Adding New Lists
-grep -v "#" dnscrypt-proxy.blacklist.txt >> blacklist.current
+# grep -v "#" dnscrypt-proxy.blacklist.txt >> blacklist.current
 cat Malware >> blacklist.current
 cat blacklist.current | sort | uniq > newblacklist.zones
 for i in $(cat newblacklist.zones); do echo "$i CNAME ." >>  newblacklist.db; done
