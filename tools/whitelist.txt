@@ -1,0 +1,10 @@
+fls-na.amazon.com
+data.amazon.com
+apx-security.amazon.com
+d1nruqhae353qc.cloudfront.net
+aax-us-iad.amazon.com
+mas-ext.amazon.com
+ftv-smp.ntp-fireos.com
+unagi.amazon.com 
+rr1---sn-bvvbax4pcxg-n5us.gvt1.com
+rr2---sn-bvvbax4pcxg-n5us.gvt1.com
