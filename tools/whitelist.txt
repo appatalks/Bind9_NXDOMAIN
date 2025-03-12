@@ -8,3 +8,6 @@ ftv-smp.ntp-fireos.com
 unagi.amazon.com 
 rr1---sn-bvvbax4pcxg-n5us.gvt1.com
 rr2---sn-bvvbax4pcxg-n5us.gvt1.com
+rr1---sn-bvvbax4pcxg-n5ul.gvt1.com
+rr2---sn-bvvbax4pcxg-n5ul.gvt1.com
+rr3---sn-bvvbax4pcxg-n5ul.gvt1.com
